@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 22, 2013 at 03:32 AM
+-- Generation Time: May 17, 2013 at 04:52 AM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -34,28 +34,6 @@ CREATE TABLE IF NOT EXISTS `employerlogin` (
   `companyName` text NOT NULL,
   `location` text NOT NULL,
   `basePay` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `employerlogin`
---
-
-INSERT INTO `employerlogin` (`employerID`, `username`, `password`, `contactEmail`, `companyName`, `location`, `basePay`) VALUES
-(1, 'tson123', 'tom', 'tson830@yahoo.com', 'Tom''s Coding Company', 'monroe', 12.15);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `jobpostings`
---
-
-CREATE TABLE IF NOT EXISTS `jobpostings` (
-  `jobName` text NOT NULL,
-  `companyName` text NOT NULL,
-  `datePosted` date NOT NULL,
-  `jobDescription` text NOT NULL,
-  `skillsRequired` text NOT NULL,
-  `other` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

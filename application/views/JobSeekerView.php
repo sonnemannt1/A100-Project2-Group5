@@ -5,7 +5,7 @@
 ?>
 <html>
 <head>
-<header><img src='banner.png'></header>
+
 <style type="text/css">
 	.leftTabs {
 		background: white;
@@ -89,7 +89,7 @@
 <title>Job Seekers</title>
 </head>
 <body onLoad="Load">
-<table align="left" style="height: 80%; width: auto">
+<table align="center" style="height:10px; width: auto">
 <tr>
 <td valign="middle">
 <h2><font color="red">Welcome to CT NextJobs</font></h2>
@@ -97,34 +97,36 @@
 </tr>
 <tr>
 <td align="center" valign="middle">
-	<div class="centerTabs" id="tabs" align="left">
-		<div class="tabContainer">
-			<table style="position: relative; width: 100%; height: 100%;">
-				<tr>
-					<td id="" class="selectedTab" align="center" onMouseOver="tab_enter(0)" onClick="tab_click(0)" onMouseOut="tab_leave(0)">
-						<p style="color: inherit">Job Seekers</p>
-					</td>
-	
-				</tr>
-			</table>
-		</div>
+	<div class="centerTabs" id="tabs" align="center">
+
 		<div>
 	
-			<div id="jobSearch" class="activeTabContent">
-				<div style="margin-top: 10px; margin-left: 15%; margin-right: 15%">
-				<table style="position: relative; width: 100%;">
-					<tr>
-					<td align=center valign=middle>
-					<?php 
-						
-					?>
-					</td>
-					</tr>
-				</table>
-				</div>
+		<div id="firstTabContent" class="activeTabContent">
+			<div style="margin-top: 10px; margin-left: 15%; margin-right: 15%">
+				<?php 
+					$query = $this->db->get("jobpostings");
+					echo (form_label("List of Job Postings On CT NextJobs"));
+					if ($query->num_rows() > 0) {
+						echo ("<table align=center class = classesTable>");
+						echo ("<tr>");
+						for ($i = 0; $i < $query->num_rows(); $i++) {
+							if ($i % 3 == 0) {
+								echo ("</tr>\n");
+								echo ("<tr>\n");
+							}
+							echo ("<td>\n");
+							echo ($query->row($i)->jobName);
+							echo ("</td>\n");
+						}
+						echo("</table>");
+					}
+				?>
 			</div>
+		</div>
 			
 	</div>
+	</div>
+	
 </td>
 </tr>
 </table>
