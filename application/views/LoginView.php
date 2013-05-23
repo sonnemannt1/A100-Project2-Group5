@@ -18,7 +18,7 @@
 </style>
 <style type="text/css">
 	.leftTabs {
-		background: white;
+		background: lightgray;
 		height: 100%;
 		margin-left: 100%;
 		margin-right: 100%;
@@ -49,6 +49,7 @@
 	.activeTabContent {
 		position: relative;
 		visibility: visible;
+		color: lightgray;
 	}
 	
 	.inactiveTabContent {
@@ -120,12 +121,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </head>
 <body>
 <table>
+
 <table align=left>
 <tr>
 <td align=left valign="middle">
 	<div id="tabs" align="left">
 		<div class="tabContainer">
-			<table style=" width: 100%; height: 100%;">
+			<table style="width: 100%; height: 100%;">
 				<tr>
 					<td id="loginTab" class="selectedTab" align="center" onMouseOver="tab_enter(0)" onClick="tab_click(0)" onMouseOut="tab_leave(0)">
 						<p style="color: inherit">Sign In</p>
@@ -137,8 +139,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		<div>
 						
 	
-			<div id="loginContent" class="activeTabContent">
-				<div style="margin-top: 10px; margin-left: 15%; margin-right: 15%">
+			<div id="firstTabContent" class="activeTabContent">
+				<div style="margin-top: 10px;">
 				<table style="position: relative; width: 100%;">
 					<tr>
 					<td align=center valign=middle>
@@ -149,9 +151,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						$passwordInput = array("type" => "text", "id" =>"password", "name" => "password", 
 											   "style" => "width: 75%; height: 20px");
 						$submitButton = array("type" => "submit", "id" => "submit", "name" => "submit", 
-											  "style" => "width: 40%; height: 25px", "value" => "Submit");
+											  "style" => "width: 45%; height: 25px", "value" => "Submit");
 						$clearButton = array("type" => "button", "id" => "btnClear", "name" => "btnClear",
-											 "style" => "width: 40%; height: 25px; margin-left: 4%", "value" => "Clear");
+											 "style" => "width: 35%; height: 25px; margin-left: 4%", "value" => "Clear");
 						echo(form_label("username", "labelUser", null) . "<br />");
 						echo (form_input($userInput) . "<br/>");
 						echo (form_label("password") . "<br/>");

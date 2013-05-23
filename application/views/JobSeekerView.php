@@ -97,26 +97,51 @@
 </tr>
 <tr>
 <td align="center" valign="middle">
-	<div class="centerTabs" id="tabs" align="center">
+	<div id="tabs" align="center">
 
 		<div>
 	
 		<div id="firstTabContent" class="activeTabContent">
-			<div style="margin-top: 10px; margin-left: 15%; margin-right: 15%">
+			<div style="margin-top: 10px">
 				<?php 
 					$query = $this->db->get("jobpostings");
 					echo (form_label("List of Job Postings On CT NextJobs"));
 					if ($query->num_rows() > 0) {
-						echo ("<table align=center class = classesTable>");
-						echo ("<tr>");
+						echo ("<table align=center class = classesTable");
+						echo ("<tr>\n");
 						for ($i = 0; $i < $query->num_rows(); $i++) {
-							if ($i % 3 == 0) {
-								echo ("</tr>\n");
-								echo ("<tr>\n");
-							}
+							echo ("<p align=center>Job Posting #". ($i + 1) . "</p>");
+							echo ("<td>\n");
+							echo ("<p align=center>Internship/Job Name: </p>");
+							echo ("</td>\n");
 							echo ("<td>\n");
 							echo ($query->row($i)->jobName);
 							echo ("</td>\n");
+							echo ("</tr>\n");
+							echo ("<tr>\n");
+							echo ("<td>\n");
+							echo ("<p align=center>Job Description </p>");
+							echo ("</td>\n");
+							echo ("<td>\n");
+							echo ($query->row($i)->jobDescription);
+							echo ("</td>\n");
+							echo ("</tr>\n");
+							echo ("<tr>\n");
+							echo ("<td>\n");
+							echo ("<p align=center>Requirements for the Job: </p>");
+							echo ("</td>\n");
+							echo ("<td>\n");
+							echo ($query->row($i)->skillsRequired);
+							echo ("</td>\n");
+							echo ("</tr>\n");
+							echo ("<tr>\n");
+							echo ("</tr>\n");
+							echo ("</table>");
+							echo ("<table align=center");
+							echo ("<tr>\n");
+
+							echo ("</tr>\n");
+							echo ("<tr>\n");
 						}
 						echo("</table>");
 					}
