@@ -141,6 +141,24 @@
 					
 					echo ("<tr>\n");
 					echo ("<td>\n");
+					echo ("Company Contact Email:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "contactEmail", "name" => "contactEmail", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+					
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Company URL:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "companySite", "name" => "companySite", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+					
+					echo ("<tr>\n");
+					echo ("<td>\n");
 					echo ("Skills Required:");
 					echo ("</td>\n");
 					echo ("<td>\n");
