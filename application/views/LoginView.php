@@ -218,7 +218,7 @@ new TWTR.Widget({
     }
   },
   features: {
-    scrollbar: false,
+    scrollbar: true,
     loop: false,
     live: true,
     hashtags: true,
@@ -232,7 +232,52 @@ new TWTR.Widget({
 <title>Login</title>
 </head>
 <body>
-<div id="fb-root"></div>
+
+<table>
+<table>
+<table align=left>
+<tr>
+<td align=left valign="middle">
+	<div id="tabs" align="left">
+		<div class="tabContainer">
+			<table style="width: 100%; height: 100%;">
+				<tr>
+				<td id="firstTab" class="selectedTab" align="center" onMouseOver="tab_enter(0)" onClick="tab_click(0)" onMouseOut="tab_leave(0)">
+					<p style="color: inherit">Sign In</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<div id="firstTabContent" class="activeTabContent">
+			<div >
+			<table style="position: relative; width: 100%;">
+				<tr>
+				<td align=center valign=middle>
+		<?php 
+
+		echo form_open("/LoginController/CheckValidLogin");
+		$userInput = array("type" => "text", "id" => "username", "name" => "username",
+				"style" => "width: 60%; height: 20px;");
+		$passwordInput = array("type" => "text", "id" =>"password", "name" => "password",
+				"style" => "width: 60%; height: 20px");
+		$submitButton = array("type" => "submit", "id" => "submit", "name" => "submit",
+				"style" => "width: 35%; height: 25px", "value" => "Submit");
+		$clearButton = array("type" => "button", "id" => "btnClear", "name" => "btnClear",
+				"style" => "width: 30%; height: 25px; margin-left: 4%", "value" => "Clear");
+		echo(form_label("username", "labelUser", null) . "<br />");
+		echo (form_input($userInput) . "<br/>");
+		echo (form_label("password") . "<br/>");
+		echo (form_password($passwordInput) . "<br/>");
+		echo (form_submit($submitButton));
+		echo (form_input($clearButton));
+		echo form_close();
+
+		?>
+		</td>
+		</tr>
+		
+		<div id="fb-root">
 <script>
   window.fbAsyncInit = function() {
   FB.init({
@@ -292,63 +337,27 @@ new TWTR.Widget({
     });
   }
 </script>
-<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+</div>
+<div>
+		<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+		</div>
+</table>
+</table>
 
-<table>
-<table align=left>
-<tr>
-<td align=left valign="middle">
-	<div id="tabs" align="left">
+	<div id="tabs" style="float:right; margin-right:10%;margin-top:-15%">
 		<div class="tabContainer">
 			<table style="width: 100%; height: 100%;">
 				<tr>
 				<td id="firstTab" class="selectedTab" align="center" onMouseOver="tab_enter(0)" onClick="tab_click(0)" onMouseOut="tab_leave(0)">
-					<p style="color: inherit">Sign In</p>
-				</td>
-				<td id="secondTab" class="inactiveTab" align="center" onMouseOver="tab_enter(1)" onMouseOut="tab_leave(1)" onClick="tab_click(1)">
 					<p style="color: inherit">New Job Seeker</p>
 				</td>
-				<td id="thirdTab" class="inactiveTab" align="center" onMouseOver="tab_enter(2)" onClick="tab_click(2)" onMouseOut="tab_leave(2)">
+				<td id="secondTab" class="inactiveTab" align="center" onMouseOver="tab_enter(1)" onMouseOut="tab_leave(1)" onClick="tab_click(1)">
 					<p style="color: inherit">New Job Poster</p>
 				</td>
 			</tr>
 		</table>
 	</div>
-	<div>
-		<div id="firstTabContent" class="activeTabContent">
-			<div >
-			<table style="position: relative; width: 100%;">
-				<tr>
-				<td align=center valign=middle>
-		<?php 
-
-		echo form_open("/LoginController/CheckValidLogin");
-		$userInput = array("type" => "text", "id" => "username", "name" => "username",
-				"style" => "width: 60%; height: 20px;");
-		$passwordInput = array("type" => "text", "id" =>"password", "name" => "password",
-				"style" => "width: 60%; height: 20px");
-		$submitButton = array("type" => "submit", "id" => "submit", "name" => "submit",
-				"style" => "width: 35%; height: 25px", "value" => "Submit");
-		$clearButton = array("type" => "button", "id" => "btnClear", "name" => "btnClear",
-				"style" => "width: 30%; height: 25px; margin-left: 4%", "value" => "Clear");
-		echo(form_label("username", "labelUser", null) . "<br />");
-		echo (form_input($userInput) . "<br/>");
-		echo (form_label("password") . "<br/>");
-		echo (form_password($passwordInput) . "<br/>");
-		echo (form_submit($submitButton));
-		echo (form_input($clearButton));
-		echo form_close();
-
-		?>
-		
-		</td>
-		<td>
-		</td>
-		</tr>
-		</table>
-		</div>
-		</div>
-		<div id="secondTabContent" class="inactiveTabContent">
+<div id="firstTabContent" class="inactiveTabContent" style="float:right; margin-top:-15%" >
 			<div>
 		<?php  
 				echo ("<table>");
@@ -465,9 +474,10 @@ new TWTR.Widget({
 				echo (form_close() . "\n");
 
 				?>
+				
 		</div>
 		</div>
-		<div id="thirdTabContent" class="inactiveTabContent">
+		<div id="secondTabContent" class="inactiveTabContent" style="float:right; margin-top:-15%" >
 			<div style="margin-top: 10px;">
 			<?php  
 				echo ("<table>");
@@ -569,10 +579,9 @@ new TWTR.Widget({
 				?>
 		</div>
 		</div>
-
-</div>
-</table>
-<div id="map-canvas" style="width:25%; height:25%; margin-top: -10%; float:right">
+		</div>
+		</table>
+		<div id="map-canvas" style="width:40%; height:40%; margin-top: -15%; float:middle; margin-left:45%">
 </div>
 </table>
 
