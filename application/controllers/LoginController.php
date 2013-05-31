@@ -15,7 +15,6 @@
 			if (isset($_SESSION["username"])) {
 				redirect("LoginView.php");
 			}
-			session_start();
 		}
 
 		function CheckValidLogin() {
