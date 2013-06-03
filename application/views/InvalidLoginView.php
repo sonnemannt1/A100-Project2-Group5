@@ -40,6 +40,7 @@
 			
 			</div>
 
+<<<<<<< HEAD
 	<body>
 		<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
 
@@ -50,4 +51,6 @@
 
 	</body>
 
+=======
+>>>>>>> parent of 7669c90... first commit
 </html>

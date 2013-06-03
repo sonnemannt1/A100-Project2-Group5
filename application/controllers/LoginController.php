@@ -1,3 +1,4 @@
+
 <?php 
 
 	if (! defined('BASEPATH')) exit('No direct access allowed');
@@ -14,6 +15,7 @@
 			if (isset($_SESSION["username"])) {
 				redirect("LoginView.php");
 			}
+			session_start();
 		}
 
 		function CheckValidLogin() {
