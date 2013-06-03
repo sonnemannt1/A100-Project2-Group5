@@ -48,8 +48,6 @@
 						$this->password = $user_data->password;
 						$this->contactEmail = $user_data->contactEmail;
 						$this->companyName = $user_data->companyName;
-						$this->location = $user_data->location;
-						$this->basePay = $user_data->basePay;
 						return $this;
 					}
 				}

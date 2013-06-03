@@ -1,0 +1,99 @@
+	.leftTabs {
+		background: white;
+		height: 100%;
+		margin-left: 5%;
+		margin-right: 75%;
+	}
+	
+	.selectedTab {
+		background: gold;
+		color: black;
+	}
+	
+	.inactiveTab {
+		background: 0099FF;
+		color: black;
+	}
+	
+	.tabHover {
+		background: 00CCFF;
+		color: black;
+	}
+	
+	.tabContainer {
+		background: gray;
+		position: relative;
+		width: 100%;
+		height: 5%;
+	}
+	
+	.activeTabContent {
+		position: relative;
+		visibility: visible;
+	}
+	
+	.inactiveTabContent {
+		position: absolute;
+		visibility: hidden;
+		height: 100%;
+	}
+	
+	.collapsedContent {
+		position: relative;
+		margin-left: 15%;
+		margin-right: 15%;
+		visibility: hidden;
+	}
+	
+	.visibleContent {
+		position: relative;
+		margin-left: 15%;
+		margin-right: 15%;
+		visibility: visible;
+	}
+	
+	.tabContainerTable {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		
+	}
+	
+		.classesTable {
+		border-style: solid;
+		border-width: 1px;
+		border-color: #DAA520;
+	}
+	
+	.classesTable td {
+		background: white;
+		color: black;
+	}
+	
+	.classesTable th {
+		background: #FFD700;
+		color: black;
+	}
+	
+	table{
+	font-family: 'Alef', sans-serif;
+	color:#363636;
+	}
+	
+	h1{
+	color:red;
+	font-family: 'Alef', sans-serif;
+	}
+	
+	h2{
+	color:#363636;
+	font-family: 'Alef', sans-serif;
+	}
+	
+	#tryagain{
+	left:50%;
+	font-family:'Alef', sans-serif;
+	text-align:center;
+	margin-left:31%;
+	margin-right:31%;
+	}
