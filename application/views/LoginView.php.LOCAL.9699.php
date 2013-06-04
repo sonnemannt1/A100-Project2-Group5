@@ -191,11 +191,12 @@
 	<head>
 		<title>Welcome to CTNextJobs!</title>
 		
-	<link href='http://fonts.googleapis.com/css?family=Alef' rel='stylesheet' type='text/css'> <!-- Google Font Api -->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>static/css/styles.css"> <!-- Stylesheet -->
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> <!-- Google Map-->
-	<script type="text/javascript" src="<?php echo base_url();?>/static/js/jquery.min.js"></script> <!-- JQuery File Call -->
-	<script type="text/javascript" src="<?php echo base_url();?>/static/js/javascript.js"></script> <!-- JavaScript File Call -->
+			<link href='http://fonts.googleapis.com/css?family=Alef' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>static/css/styles.css">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>/static/js/javascript.js"></script>
 	
 	
 	
@@ -242,11 +243,7 @@
         <br/>"); echo (form_submit($submitButton)); echo (form_input($clearButton)); echo form_close(); ?>
         <!-- </td>
 <body>
-
 <header><img src='http://newhiteboard.com/wp-content/uploads/2012/10/header.png'></header>
-
-<a class="twitter-timeline"  href="https://twitter.com/CodeA100"  data-widget-id="341937786095546368">Tweets by @CodeA100</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 <table>
 <tr>
 <td align=left valign="middle">
@@ -391,6 +388,37 @@
 
 	?>
 	
+	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+	<script type="text/javascript">
+	new TWTR.Widget({
+	  version: 2,
+	  type: 'profile',
+	  rpp: 4,
+	  interval: 6000,
+	  width: 216,
+	  height: 240,
+	  theme: {
+		shell: {
+		  background: 'lightblue',
+		  color: '#292b2c'
+		},
+		tweets: {
+		  background: 'lightgray',
+		  color: '#292b2c',
+		  links: '#1388d2'
+		}
+	  },
+	  features: {
+		scrollbar: true,
+		loop: false,
+		live: true,
+		hashtags: true,
+		timestamp: true,
+		avatars: false,
+		behavior: 'all'
+	  }
+	}).render().setUser('gridnewhaven').start();
+	</script>
 	
 
 	<table>
@@ -782,6 +810,7 @@
 
 	</div>
 	
+    <div id="map-canvas"></div>
 
 </div>
 

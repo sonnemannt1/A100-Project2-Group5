@@ -220,6 +220,7 @@
                  // Here we run a very simple test of the Graph API after login is successful. 
                  // This testAPI() function is only called in those cases. 
 	?>
+<<<<<<< HEAD
 
                 function testAPI() {
                     console.log('Welcome!  Fetching your information.... ');
@@ -241,6 +242,8 @@
         <br/>". "
         <br/>"); echo (form_submit($submitButton)); echo (form_input($clearButton)); echo form_close(); ?>
         <!-- </td>
+=======
+>>>>>>> 864d2ffe245e22825dd2bbfdc1f7790ab1fb9735
 <body>
 
 <header><img src='http://newhiteboard.com/wp-content/uploads/2012/10/header.png'></header>
