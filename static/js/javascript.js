@@ -77,54 +77,6 @@
 			}
 		}
 	}
-	
-// google maps api 
-
-function initialize() {
-var mapOptions = {
-		zoom: 15,
-		center: new google.maps.LatLng(41.3081, -72.9286),
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-};
-
-map = new google.maps.Map(document.getElementById('map-canvas'),
-		mapOptions);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-
-//twitter
-
-new TWTR.Widget({
-  version: 2,
-  type: 'profile',
-  rpp: 4,
-  interval: 6000,
-  width: 216,
-  height: 240,
-  theme: {
-    shell: {
-      background: 'lightblue',
-      color: '#292b2c'
-    },
-    tweets: {
-      background: 'lightgray',
-      color: '#292b2c',
-      links: '#1388d2'
-    }
-  },
-  features: {
-    scrollbar: true,
-    loop: false,
-    live: true,
-    hashtags: true,
-    timestamp: true,
-    avatars: false,
-    behavior: 'all'
-  }
-}).render().setUser('gridnewhaven').start();
-
 
 //facebook login
   window.fbAsyncInit = function() {
@@ -166,26 +118,6 @@ new TWTR.Widget({
     }
   });
   };
-  
-  
-  //google maps
-
-	google.maps.visualRefresh = true;
-
-	var map;
-
-	function initialize() {
-		var mapOptions = {
-				zoom: 15,
-				center: new google.maps.LatLng(41.3081, -72.9286),
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-
-		map = new google.maps.Map(document.getElementById('map-canvas'),
-				mapOptions);
-	}
-
-	google.maps.event.addDomListener(window, 'load', initialize);
   // Here we run a very simple test of the Graph API after login is successful. 
   // This testAPI() function is only called in those cases. 
   function testAPI() {
@@ -195,34 +127,17 @@ new TWTR.Widget({
     });
   }
   
-  //twitter api
-  	new TWTR.Widget({
-	  version: 2,
-	  type: 'profile',
-	  rpp: 4,
-	  interval: 6000,
-	  width: 216,
-	  height: 240,
-	  theme: {
-		shell: {
-		  background: 'lightblue',
-		  color: '#292b2c'
-		},
-		tweets: {
-		  background: 'lightgray',
-		  color: '#292b2c',
-		  links: '#1388d2'
-		}
-	  },
-	  features: {
-		scrollbar: true,
-		loop: false,
-		live: true,
-		hashtags: true,
-		timestamp: true,
-		avatars: false,
-		behavior: 'all'
-	  }
-	}).render().setUser('gridnewhaven').start();
-
   
+  // google maps api 
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(41.3081, 72.9286),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
