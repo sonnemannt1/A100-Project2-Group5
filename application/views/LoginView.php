@@ -34,7 +34,11 @@
                                     <table style="position: relative; width: 100%;">
                                         <tr>
                                             <td align=center valign=middle>
+<<<<<<< HEAD
                                                 <?php echo form_open( "/LoginController/CheckValidLogin"); $userInput=array( "type"=>"text", "id" => "username", "name" => "username", "style" => "width: 60%; height: 20px;"); $passwordInput = array("type" => "text", "id" =>"password", "name" => "password", "style" => "width: 60%; height: 20px"); $submitButton = array("type" => "submit",
+=======
+                                                <?php echo form_open( "/LoginController/CheckValidLogin"); $userInput=a rray( "type"=>"text", "id" => "username", "name" => "username", "style" => "width: 60%; height: 20px;"); $passwordInput = array("type" => "text", "id" =>"password", "name" => "password", "style" => "width: 60%; height: 20px"); $submitButton = array("type" => "submit",
+>>>>>>> ab197c1a99b024cc79a54867acf5676809274131
                                                 "id" => "submit", "name" => "submit", "style" => "width: 35%; height: 25px", "value" => "Submit"); $clearButton = array("type" => "button", "id" => "btnClear", "name" => "btnClear", "style" => "width: 30%; height: 25px; margin-left: 4%", "value" => "Clear");
                                                 echo(form_label("username", "labelUser", null) . "
                                                 <br />"); echo (form_input($userInput) . "
@@ -84,7 +88,41 @@
             <tr>\n"); echo ("
                 <td>\n"); echo ("Telephone Number:"); echo ("</td>\n"); echo ("
                 <td>\n"); echo (form_input(array("id" => "telephone", "name" => "telephone", "type" => "text"))); echo ("</td>"); echo ("</tr>\n"); echo ("</table>"); echo ("</form>"); ?>
+<<<<<<< HEAD
         
+=======
+        <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+        <script type="text/javascript">
+            new TWTR.Widget({
+                    version: 2,
+                    type: 'profile',
+                    rpp: 4,
+                    interval: 6000,
+                    width: 216,
+                    height: 240,
+                    theme: {
+                        shell: {
+                            background: 'lightblue',
+                            color: '#292b2c'
+                        },
+                        tweets: {
+                            background: 'lightgray',
+                            color: '#292b2c',
+                            links: '#1388d2'
+                        }
+                    },
+                    features: {
+                        scrollbar: true,
+                        loop: false,
+                        live: true,
+                        hashtags: true,
+                        timestamp: true,
+                        avatars: false,
+                        behavior: 'all'
+                    }
+                }).render().setUser('gridnewhaven').start();
+        </script>
+>>>>>>> ab197c1a99b024cc79a54867acf5676809274131
         <table>
             <tr>
                 <td align=left valign="middle">
@@ -116,6 +154,7 @@
                                 <div style="margin-top: 10px;">
                                     <?php echo(form_open( "LoginController/SubmitJobPoster")); echo ( "<table>"); echo ( "<tr>\n"); echo ( "<td>\n"); echo ( "Company Name:"); echo ( "</td>\n"); echo ( "<td>\n"); echo (form_input(array( "id"=>"companyName", "name" => "companyName", "type" => "text"))); echo ("</td>"); echo ("</tr>\n"); echo ("</table>"); echo ("</form>"); ?>
         <div id="firstTabContent">
+<<<<<<< HEAD
     
 
         </div>
@@ -135,6 +174,113 @@
 <a class="twitter-timeline"  href="https://twitter.com/CodeA100"  data-widget-id="341937786095546368">Tweets by @CodeA100</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
+=======
+            <script type="text/javascript">
+                window.fbAsyncInit = function () {
+                    FB.init({
+                            appId: '468413103234050', // App ID
+                            channelUrl: 'http://localhost/A100-Project2-Group5/', // Channel File
+                            status: true, // check login status
+                            cookie: true, // enable cookies to allow the server to access the session
+                            xfbml: true // parse XFBML
+                        });
+<!DOCTYPE HTML>	
+	<html>
+
+                    // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
+                    // for any authentication related change, such as login, logout or session refresh. This means that
+                    // whenever someone who was previously logged out tries to log in again, the correct case below 
+                    // will be handled. 
+                    FB.Event.subscribe('auth.authResponseChange', function (response) {
+                        // Here we specify what we do with the response anytime this event occurs. 
+                        if (response.status === 'connected') {
+                            // The response object is returned with a status field that lets the app know the current
+                            // login status of the person. In this case, we're handling the situation where they 
+                            // have logged in to the app.
+                            testAPI();
+                        } else if (response.status === 'not_authorized') {
+                            // In this case, the person is logged into Facebook, but not into the app, so we call
+                            // FB.login() to prompt them to do so. 
+                            // In real-life usage, you wouldn't want to immediately prompt someone to login 
+                            // like this, for two reasons:
+                            // (1) JavaScript created popup windows are blocked by most browsers unless they 
+                            // result from direct interaction from people using the app (such as a mouse click)
+                            // (2) it is a bad experience to be continually prompted to login upon page load.
+                            FB.login();
+                        } else {
+                            // In this case, the person is not logged into Facebook, so we call the login() 
+                            // function to prompt them to do so. Note that at this stage there is no indication
+                            // of whether they are logged into the app. If they aren't then they'll see the Login
+                            // dialog right after they log in to Facebook. 
+                            // The same caveats as above apply to the FB.login() call here.
+                            FB.login();
+                        }
+                    });
+                };
+	<head>
+		<title>Welcome to CTNextJobs!</title>
+		
+	<link href='http://fonts.googleapis.com/css?family=Alef' rel='stylesheet' type='text/css'> <!-- Google Font Api -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>static/css/styles.css"> <!-- Stylesheet -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> <!-- Google Map-->
+	<script type="text/javascript" src="<?php echo base_url();?>/static/js/jquery.min.js"></script> <!-- JQuery File Call -->
+	<script type="text/javascript" src="<?php echo base_url();?>/static/js/javascript.js"></script> <!-- JavaScript File Call -->
+	
+	
+	
+	</head>
+	<?php
+
+                 // Load the SDK asynchronously
+                (function (d) {
+                    var js, id = 'facebook-jssdk',
+                        ref = d.getElementsByTagName('script')[0];
+                    if (d.getElementById(id)) {
+                        return;
+                    }
+                    js = d.createElement('script');
+                    js.id = id;
+                    js.async = true;
+                    js.src = "//connect.facebook.net/en_US/all.js";
+                    ref.parentNode.insertBefore(js, ref);
+                }(document));
+		$this->load->helper("form");	
+
+                 // Here we run a very simple test of the Graph API after login is successful. 
+                 // This testAPI() function is only called in those cases. 
+	?>
+<<<<<<< HEAD
+
+                function testAPI() {
+                    console.log('Welcome!  Fetching your information.... ');
+                    FB.api('/me', function (response) {
+                        console.log('Good to see you, ' + response.name + '.');
+                    });
+                }
+            </script>
+            <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+        </div>
+        <?php echo form_open( "/LoginController/CheckValidLogin"); $userInput=a rray( "type"=>"text", "id" => "username", "name" => "username", "style" => "width: 60%; height: 25px;"); $passwordInput = array("type" => "text", "id" =>"password", "name" => "password", "style" => "width: 60%; height: 25px"); $submitButton = array("type" => "submit",
+        "id" => "submit", "name" => "submit", "style" => "width: 35%; height: 25px", "value" => "Submit"); $clearButton = array("type" => "button", "id" => "btnClear", "name" => "btnClear", "style" => "width: 30%; height: 25px; margin-left: 4%", "value" => "Clear");
+        echo("
+        <br />". form_label("Username", "labelUser", null) . "
+        <br />"); echo (form_input($userInput) . "
+        <br/>". "
+        <br/>"); echo (form_label("Password") . "
+        <br/>"); echo (form_password($passwordInput) . "
+        <br/>". "
+        <br/>"); echo (form_submit($submitButton)); echo (form_input($clearButton)); echo form_close(); ?>
+        <!-- </td>
+=======
+>>>>>>> 864d2ffe245e22825dd2bbfdc1f7790ab1fb9735
+<body>
+
+<header><img src='http://newhiteboard.com/wp-content/uploads/2012/10/header.png'></header>
+
+<a class="twitter-timeline"  href="https://twitter.com/CodeA100"  data-widget-id="341937786095546368">Tweets by @CodeA100</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+>>>>>>> ab197c1a99b024cc79a54867acf5676809274131
 <table>
 <tr>
 <td align=left valign="middle">
@@ -358,6 +504,14 @@
 
 			?>
 			
+<<<<<<< HEAD
+=======
+			<!-- </td>
+			<td>
+			</td>
+			</tr>
+			</table> -->
+>>>>>>> ab197c1a99b024cc79a54867acf5676809274131
         </div>
         </div>
         <div id="secondTabContent" class="inactiveTabContent">
@@ -428,10 +582,257 @@
                     <td colspan=2>\n"); echo (form_submit(array("name" => "submit", "value" => "Submit", "style" => "width: 47%; margin-right: 3%"))); echo (form_reset(array("name" => "reset", "style" => "width: 47%; margin-left: 3%"), "Reset")); echo ("</td>\n"); echo ("</tr>\n"); echo
                 ("</table>"); echo (form_close() . "\n"); ?></div>
         </div>
+<<<<<<< HEAD
 
 
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+=======
+        </div>
+        <div id="map-canvas" style="width:25%; height:25%; margin-top: -10%; float:right"></div>
+        </table>
+        </div>
+        </div>
+        </div>
+        </table>
+        <div id="map-canvas" style="width:40%; height:40%; margin-top: -15%; float:middle; margin-left:45%"></div>
+    </body>
+			</div>
+			</div>
+			<div id="secondTabContent" class="inactiveTabContent">
+				<div>
+			<?php 
+					echo(form_open("LoginController/SubmitJobSeeker"));
+					echo ("<table>");
+					
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("First Name:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "firstName", "name" => "firstName", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+						
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Last Name:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "lastName", "name" => "lastName", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+						
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Address:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "address", "name" => "address", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+						
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("City:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "city", "name" => "city", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+						
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("State:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "state", "name" => "state", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+						
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("ZIP Code:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "zip", "name" => "zip", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+						
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Email Address:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "emailAddress", "name" => "emailAddress", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+						
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Telephone Number:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "telephone", "name" => "telephone", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+
+</html>					
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Username:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "username", "name" => "username", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+		
+					
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Password:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_password(array("id" => "password", "name" => "password", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+
+					
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Confirm Password:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_password(array("id" => "confirmPassword", "name" => "confirmPassword", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+		
+					echo ("<tr>\n");
+					echo ("<td colspan=2>\n");
+					echo (form_submit(array("name" => "submit", "value" => "Submit", "style" => "width: 47%; margin-right: 3%")));
+					echo (form_reset(array("name" => "reset", "style" => "width: 47%; margin-left: 3%"), "Reset"));
+					echo ("</td>\n");
+					echo ("</tr>\n");
+					echo ("</table>");
+					echo (form_close() . "\n");
+
+					?>
+			</div>
+			</div>
+			<div id="thirdTabContent" class="inactiveTabContent">
+				<div style="margin-top: 10px;">
+				<?php  
+					echo(form_open("LoginController/SubmitJobPoster"));
+					echo ("<table>");
+					
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Company Name:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "companyName", "name" => "companyName", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+						
+						
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Address:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "address", "name" => "address", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+						
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("City:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "city", "name" => "city", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+						
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("State:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "state", "name" => "state", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+						
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("ZIP Code:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "zip", "name" => "zip", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+						
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Contact Email:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "contactEmail", "name" => "contactEmail", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+
+					
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Username:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_input(array("id" => "username", "name" => "username", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+		
+					
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Password:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_password(array("id" => "password", "name" => "password", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+
+					
+					echo ("<tr>\n");
+					echo ("<td>\n");
+					echo ("Confirm Password:");
+					echo ("</td>\n");
+					echo ("<td>\n");
+					echo (form_password(array("id" => "confirmPassword", "name" => "confirmPassword", "type" => "text")));
+					echo ("</td>");
+					echo ("</tr>\n");
+		
+					echo ("<tr>\n");
+					echo ("<td colspan=2>\n");
+					echo (form_submit(array("name" => "submit", "value" => "Submit", "style" => "width: 47%; margin-right: 3%")));
+					echo (form_reset(array("name" => "reset", "style" => "width: 47%; margin-left: 3%"), "Reset"));
+					echo ("</td>\n");
+					echo ("</tr>\n");
+					echo ("</table>");
+					echo (form_close() . "\n");
+
+					?>
+			</div>
+			</div>
+
+	</div>
+	
+
+</div>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+>>>>>>> ab197c1a99b024cc79a54867acf5676809274131
 <h1>Hello, world!</h1>
 <a href="gmail.com">hi</a>
 <script src="http://code.jquery.com/jquery.js"></script>
