@@ -10,11 +10,6 @@
 		color: black;
 	}
 	
-	.inactiveTab {
-		background: 0099FF;
-		color: black;
-	}
-	
 	.tabHover {
 		background: 00CCFF;
 		color: black;
@@ -29,13 +24,12 @@
 	
 	.activeTabContent {
 		position: relative;
-		visibility: visible;
+		display: block;
 	}
 	
 	.inactiveTabContent {
-		position: absolute;
-		visibility: hidden;
-		height: 50%;
+		position: relative;
+		display: none;
 	}
 	
 	.collapsedContent {
@@ -97,8 +91,21 @@
 	margin-left:31%;
 	margin-right:31%;
 	}
-
-#map-canvas {
-        margin: 0;
-        padding: 0;
-        height: 100%;
+	
+	.activeTab,
+	.inactiveTab
+	{
+		cursor:pointer;
+	}
+	
+	.activeTab{
+	background-color:#0072BC;
+	}
+	
+	.inactiveTab{
+	background-color:#66ccff;
+	}
+	
+	.onHover{
+	background-color:#ff3300;
+	}

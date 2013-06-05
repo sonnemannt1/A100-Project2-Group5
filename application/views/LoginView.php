@@ -44,6 +44,11 @@
                                                 <br/>"); echo (form_password($passwordInput) . "
                                                 <br/>"); echo (form_submit($submitButton)); echo (form_input($clearButton)); echo form_close(); ?></td>
                                         </tr>
+										<tr>
+											<td> 
+												Don't have an account? <a href="<?php echo base_url() ?>index.php/SignupFormController">Register now.</a>
+											</td>
+										</tr>
                                     </table>
 
 <a class="twitter-timeline"  href="https://twitter.com/CodeA100"  data-widget-id="341937786095546368">Tweets by @CodeA100</a>

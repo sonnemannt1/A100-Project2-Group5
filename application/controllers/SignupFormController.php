@@ -2,7 +2,7 @@
 
 	if (! defined('BASEPATH')) exit('No direct access allowed');
 
-	class LoginController extends CI_Controller {
+	class SignupFormController extends CI_Controller {
 		
 		public function __construct() {
 			parent::__construct();

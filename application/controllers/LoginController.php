@@ -10,9 +10,9 @@
 		
 		function index() {
 
-			$this->load->view("SignupFormView");
+			$this->load->view("loginView");
 			if (isset($_SESSION["username"])) {
-				redirect("SignupFormView.php");
+				redirect("loginview.php");
 			}
 		}
 
