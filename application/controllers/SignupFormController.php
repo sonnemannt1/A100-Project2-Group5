@@ -15,44 +15,6 @@
 				redirect("SignupFormView.php");
 			}
 		}
-
-		function CheckValidLogin() {
-
-			$this->load->model("LoginModel"); // load up the model
-			$user = $this->LoginModel->getLoginData($this->input->post("username")); // creates a LoginModel object that has user data for the ID
-			if ($user == false) {
-				$this->load->view("InvalidLoginView");
-				return;
-			}
-			if (isset($_SESSION["isEmployer"]) == true) {
-				if ($_SESSION["isEmployer"] == true) {
-					$password = $this->input->post("password");
-					if ($password == $user->password) {
-						$this->load->view("EmployerView");
-						return;
-
-					}
-					else {
-						$this->load->view("InvalidLoginView");
-						return;
-					}
-				}
-				else if ($_SESSION["isEmployer"] == false) {
-					$password = $this->input->post("password");
-					if ($password == $user->password) {
-						$this->load->view("JobSeekerView");
-					}
-					else {
-						$this->load->view("InvalidLoginView");
-						return;
-					}
-				}
-				else {
-					$this->load->view("InvalidLoginView");
-					return;
-				}
-			}
-		}
 		
 		function SubmitJobPosting() {
 			$query = $this->db->get("jobpostings");

@@ -35,7 +35,7 @@
 	.inactiveTabContent {
 		position: absolute;
 		visibility: hidden;
-		height: 100%;
+		height: 50%;
 	}
 	
 	.collapsedContent {
