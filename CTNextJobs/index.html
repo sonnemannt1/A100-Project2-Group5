@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CTNextJobs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/CTNextJobs/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/CTNextJobs/assets/css/styles.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="/CTNextJobs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <img src="/CTNextJobs/assets/img/banner.png" class="img-rounded" width="700px"/>
+    <div class="container-fluid">
+     <div class="row-fluid">
+        <div class="span2">
+          <!--Sidebar content-->
+          <!--SignIn-->
+          <form class="form-signin">
+            <h2 class="form-signin-heading">Sign in:</h2>
+            <input type="text" class="input-block-level" placeholder="Username">
+            <input type="password" class="input-block-level" placeholder="Password">
+            <label class="checkbox">
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            <button class="btn btn-small btn-primary" type="submit">Sign in</button>
+          </form>
+          <!--/SignIn-->
+          <!-- Button to trigger modal -->
+          Don't have an account?<a href="#myModal" role="button" class="btn" data-toggle="modal">Create One!</a>
+
+        </div>
+        <div class="span10">
+          <!--Body content-->
+          <div class="tabbable">
+            <ul id="myTab" class="nav nav-tabs">
+              <li><a class="active" href="#home" data-toggle="tab"><i class="icon-home"></i>Home</a></li>
+              <li><a href="#map" data-toggle="tab"><i class="icon-globe"></i>Map</a></li>
+              <li><a href="#social" data-toggle="tab"><i class="icon-thumbs-up"></i>Social</a></li>
+              <li><a href="#feedback" data-toggle="tab"><i class="icon-envelope"></i>Feedback</a></li>
+            </ul>
+            <div class="tab-content">
+              
+              <div class="tab-pane fade in active" id="home">
+                HOME ...  Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. 
+              </div>
+            
+              <div class="tab-pane fade in " id="map">
+                MAP ... Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+              </div>
+          
+              <div class="tab-pane fade in " id="social">
+                <!--Twitter Feed-->
+                <a class="twitter-timeline" href="https://twitter.com/KFCharron_/the-whiteboard" data-widget-id="342365302589374465">Tweets from Connecticut Innovators</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <!--/Twitter Feed--> 
+              </div> 
+              
+              <div class="tab-pane fade in " id="feedback">
+                FEEDBACK ... Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+              </div>
+            </div>
+            <!-- Modal -->
+            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">New Account</h3>
+              </div>
+              <div class="modal-body">
+                <p>Here is where all the new account stuff will go....</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                <button class="btn btn-primary">Create Account</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!-- /container -->
+    
+    <!-- Nero Footer --
+    <div id="footer">
+      <a href="http://thebottlenose.files.wordpress.com/2010/03/toughdolphin.jpg?w=490">Dolphin-Mafia™</a>
+      <br>Home•About Us•FAQ•Feedback</br>
+    </div>
+    <!-- /Nero Footer -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/CTNextJobs/assets/js/jquery.js"></script>
+    <script src="/CTNextJobs/assets/js/bootstrap.js"></script>
+    <script src="/CTNextJobs/assets/js/scripts.js"></script>
+    <script>
+      $('#myModal').modal(options);
+    </script>
+    <script>
+        $(function () {
+        $('#myTab a:first').tab('show');
+        })
+    </script>
+    
+
+  </body>
+</html>

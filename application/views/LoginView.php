@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 	<?php
 
 		$this->load->helper("form");	
@@ -145,93 +146,133 @@ new TWTR.Widget({
 </script>
 
 <title>Login</title>
+=======
+<?php
+	$this->load->helper("form");
+?>
+<html>
+<head>
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/styles.css" rel="stylesheet">
+<style>
+	html, body, #map-canvas {
+		margin: 0;
+		padding: 0;
+		height: 100%
+}
+</style>
+<title>Connecticut Next Jobs</title>
+>>>>>>> new scaffolding
 </head>
 <body>
-
-<table>
-<table>
-<table align=left>
-<tr>
-<td align=left valign="middle">
-	<div id="tabs" align="left">
-		<div class="tabContainer">
-			<table style="width: 100%; height: 100%;">
-				<tr>
-				<td id="firstTab" class="selectedTab" align="center" onMouseOver="tab_enter(0)" onClick="tab_click(0)" onMouseOut="tab_leave(0)">
-					<p style="color: inherit">Sign In</p>
-				</td>
-			</tr>
-		</table>
-	</div>
-	<div>
-		<div id="firstTabContent" class="activeTabContent">
-			<div >
-			<table style="position: relative; width: 100%;">
-				<tr>
-				<td align=center valign=middle>
-		<?php 
-
+    <img src="banner.png" class="img-rounded" width="700px"/>
+    <div class="container-fluid">
+     <div class="row-fluid">
+        <div class="span2">
+          <!--Sidebar content-->
+          <!--SignIn-->
+          <h2 class="form-signin-heading">Sign in:</h2>
+        <?php 
 		echo form_open("/LoginController/CheckValidLogin");
 		$userInput = array("type" => "text", "id" => "username", "name" => "username",
-				"style" => "width: 60%; height: 20px;");
+				"style" => "width: 60%; height: 20px;","placeholder"=>"username");
 		$passwordInput = array("type" => "text", "id" =>"password", "name" => "password",
-				"style" => "width: 60%; height: 20px");
+				"style" => "width: 60%; height: 20px","placeholder"=>"password");
 		$submitButton = array("type" => "submit", "id" => "submit", "name" => "submit",
 				"style" => "width: 35%; height: 25px", "value" => "Submit");
-		$clearButton = array("type" => "button", "id" => "btnClear", "name" => "btnClear",
-				"style" => "width: 30%; height: 25px; margin-left: 4%", "value" => "Clear");
-		echo(form_label("username", "labelUser", null) . "<br />");
 		echo (form_input($userInput) . "<br/>");
-		echo (form_label("password") . "<br/>");
 		echo (form_password($passwordInput) . "<br/>");
-		echo (form_submit($submitButton));
-		echo (form_input($clearButton));
-		echo form_close();
-
-		?>
-		</td>
-		</tr>
-		
-		<div id="fb-root">
-<script>
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '468413103234050', // App ID
-    channelUrl : 'http://localhost/A100-Project2-Group5/', // Channel File
-    status     : true, // check login status
-    cookie     : true, // enable cookies to allow the server to access the session
-    xfbml      : true  // parse XFBML
-  });
-
-  // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
-  // for any authentication related change, such as login, logout or session refresh. This means that
-  // whenever someone who was previously logged out tries to log in again, the correct case below 
-  // will be handled. 
-  FB.Event.subscribe('auth.authResponseChange', function(response) {
-    // Here we specify what we do with the response anytime this event occurs. 
-    if (response.status === 'connected') {
-      // The response object is returned with a status field that lets the app know the current
-      // login status of the person. In this case, we're handling the situation where they 
-      // have logged in to the app.
-      testAPI();
-    } else if (response.status === 'not_authorized') {
-      // In this case, the person is logged into Facebook, but not into the app, so we call
-      // FB.login() to prompt them to do so. 
-      // In real-life usage, you wouldn't want to immediately prompt someone to login 
-      // like this, for two reasons:
-      // (1) JavaScript created popup windows are blocked by most browsers unless they 
-      // result from direct interaction from people using the app (such as a mouse click)
-      // (2) it is a bad experience to be continually prompted to login upon page load.
-      FB.login();
+		?> 
+		<button class="btn btn-small btn-primary" type="submit">Sign in</button><br>
+		</form>
+          <!--/SignIn-->
+          <!-- Button to trigger modal -->
+          Don't have an account?<a href="#myModal" role="button" class="btn" data-toggle="modal">Create One!</a>
+        </div>
+        <div class="span10">
+          <!--Body content-->
+          <div class="tabbable">
+            <ul id="myTab" class="nav nav-tabs">
+              <li><a class="active" href="#home" data-toggle="tab"><i class="icon-home"></i>Home</a></li>
+              <li><a href="#map" data-toggle="tab"><i class="icon-globe"></i>Map</a></li>
+              <li><a href="#social" data-toggle="tab"><i class="icon-thumbs-up"></i>Social</a></li>
+              <li><a href="#feedback" data-toggle="tab"><i class="icon-envelope"></i>Feedback</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="home">
+                HOME ...  Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. 
+              </div>            
+              <div class="tab-pane fade in " id="map">
+				<div id="map-canvas"></div>
+			</div>         
+              <div class="tab-pane fade in " id="social">
+                <!--Twitter Feed-->
+                <a class="twitter-timeline" href="https://twitter.com/KFCharron_/the-whiteboard" data-widget-id="342365302589374465">Tweets from Connecticut Innovators</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <!--/Twitter Feed--> 
+              </div>
+            </div>
+            <!-- Modal -->
+            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                <h3 id="myModalLabel">New Account</h3>
+              </div>
+              <div class="modal-body">
+                <p>Here is where all the new account stuff will go....</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                <button class="btn btn-primary">Create Account</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script>
+      $('#myModal').modal(options);
+    </script>
+    <script>
+        $(function () {
+        $('#myTab a:first').tab('show');
+        })
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+     <script type="text/javascript">
+	var geocoder;
+	var map;
+	function initialize() {
+ 	 geocoder = new google.maps.Geocoder();
+ 	 var latlng = new google.maps.LatLng(41.3081, -72.9286);
+ 	 var mapOptions = {
+ 	   zoom: 10,
+ 	   center: latlng,
+ 	   mapTypeId: google.maps.MapTypeId.ROADMAP
+ 	 }
+ 	 map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+ 	  google.maps.event.addListenerOnce(map, 'idle', function(){
+   	 pinAddress_func();
+	});
+	}
+	function codeAddress() {
+ 	 var address = document.getElementById('address').value;
+  	geocoder.geocode( { 'address': address}, function(results, status) {
+   	 if (status == google.maps.GeocoderStatus.OK) {
+   	   map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
     } else {
-      // In this case, the person is not logged into Facebook, so we call the login() 
-      // function to prompt them to do so. Note that at this stage there is no indication
-      // of whether they are logged into the app. If they aren't then they'll see the Login
-      // dialog right after they log in to Facebook. 
-      // The same caveats as above apply to the FB.login() call here.
-      FB.login();
+      alert('Geocode was not successful for the following reason: ' + status);
     }
   });
+<<<<<<< HEAD
   };
 >>>>>>> 5c1a1a28fc8feb309dd6bcc955f91b1371f48c7d
 
@@ -782,3 +823,25 @@ new TWTR.Widget({
 
 	</body>
 	</html>
+=======
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+	pinAddress_func = null;
+	$(function() {
+		function pinAddress(){
+			var address=$('.address');
+			var addressInput=$('#address');
+			for(var i=address.length-1; i>=0; i--)
+			{
+				var addressText = address.eq(i).text();
+				addressInput.val(addressText);
+				codeAddress();
+			}
+		}
+		pinAddress_func = pinAddress;
+		}
+		);	
+	</script>
+</body>
+</html>
+>>>>>>> new scaffolding
