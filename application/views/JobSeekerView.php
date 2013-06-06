@@ -75,7 +75,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 <div class="JobSeekerViewMainDiv">
-<h2>Welcome to CT NextJobs!</h2>
+            <img src='http://newhiteboard.com/wp-content/uploads/2012/10/header.png'>
 				<?php 
 					$this->db->from("jobpostings");
 					$this->db->order_by("datePosted", "desc");
