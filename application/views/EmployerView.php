@@ -44,10 +44,10 @@
 					
 					echo ("<tr>\n");
 					echo ("<td>\n");
-					echo ("Date Posted:");
+					echo ("Address:");
 					echo ("</td>\n");
 					echo ("<td>\n");
-					echo (form_input(array("id" => "datePosted", "name" => "datePosted", "type" => "date")));
+					echo (form_input(array("id" => "address", "name" => "address", "type" => "text")));
 					echo ("</td>");
 					echo ("</tr>\n");
 					
