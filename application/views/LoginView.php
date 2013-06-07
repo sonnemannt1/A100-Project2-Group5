@@ -4,8 +4,9 @@
 
 <html>
 <head>
-<link href="assets/css/bootstrap.css" rel="stylesheet">
-<link href="assets/css/styles.css" rel="stylesheet">
+<link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet">
+<link href="<?php echo base_url();?>assets/css/styles.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>static/css/styles.css">
 <script src="<?php echo base_url();?>static/js/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script src="<?php echo base_url();?>static/js/loginview.js"></script>
@@ -73,7 +74,7 @@ function autoResize(id){
               </div>
 			 <div class="tab-pane fade in " id="feedback">
             </div>
-			<div class="tab-pane fade in jobsIFrameContainer active"  id="jobs">
+			<div class="tab-pane fade in jobsIFrameContainer JobSeekerViewMainDiv"  id="jobs">
 				<!--<iframe id="jobsResultsIFRAME" onLoad="autoResize('jobsResultsIFRAME');" class="jobsResultsIFRAME" scrolling="yes" width="100%" height="100%" src="<?php echo base_url();?>index.php/JobSeekerController" frameborder="0"></iframe>-->
 				<?php
 				$this->db->from("jobpostings");
